@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoWatch | Climate Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header id="mainHeader">
+        <div class="logo">🌿 EcoWatch</div>
+        <button id="themeToggle" class="theme-btn">🌙 Dark Mode</button>
+    </header>
+    </header>
+
+    <main>
+        <section class="search-section">
+            <h1>Local Climate & Air Quality</h1>
+            <p>Enter a city to get real-time atmospheric data.</p>
+            <div class="search-box">
+                <input type="text" id="cityInput" placeholder="Enter city name (e.g., Tbilisi)">
+                <button id="searchBtn">Analyze</button>
+            </div>
+        </section>
+
+        <section id="resultContainer" class="result-section hidden">
+            </section>
+
+        <section class="info-section">
+            <h2>Why Track Air Quality?</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>PM2.5 (Micro-Particles)</h3>
+                    <p>Fine particles that enter the bloodstream. High levels disrupt cardiovascular health.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Ozone (O3)</h3>
+                    <p>Ground-level ozone limits lung capacity during aerobic exercise. Work out indoors on high O3 days.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 EcoWatch | Data provided by OpenWeather API</p>
+        <button id="scrollToTop" class="hidden">↑ Top</button>
+    </footer>
+
+    <div id="cookieBanner" class="cookie-banner hidden">
+        <p>We use local storage to save your preferences.</p>
+        <button id="acceptCookies">Accept</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
