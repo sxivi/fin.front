@@ -65,7 +65,7 @@ searchBtn.addEventListener('click', async () => {
         let aqiData = await aqiRes.json();
         
         // D. Send to Display Function
-        displayData(geoData[0].name, weatherData.main.temp, aqiData.list[0].main.aqi, aqiData.list[0].components);
+        displayData(geoData[0].name, weatherData.main.temp,weatherData.weather[0].description, aqiData.list[0].main.aqi, aqiData.list[0].components);
         
         searchBtn.innerText = "Analyze";
     } catch (error) {
@@ -91,6 +91,7 @@ function displayData(cityName, temp, aqiLevel, pollutants) {
     const html = `
         <div class="climate-card">
             <h2>${cityName}</h2>
+            <p style="text-transform: capitalize; margin-bottom: 10px; color: #718096;">${weatherDesc}</p>
             <div class="temperature">${Math.round(temp)}°C</div>
             <div class="status-badge aqi-${aqiLevel}">Overall AQI: ${aqiLevel} - ${aqiText}</div>
 
