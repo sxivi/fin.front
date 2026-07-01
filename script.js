@@ -5,7 +5,6 @@ const searchBtn = document.getElementById('searchBtn');
 const cityInput = document.getElementById('cityInput');
 const resultContainer = document.getElementById('resultContainer');
 const header = document.getElementById('mainHeader');
-const scrollToTopBtn = document.getElementById('scrollToTop');
 
 // --- 1. LOCAL STORAGE (Cookie Banner) ---
 const cookieBanner = document.getElementById('cookieBanner');
@@ -59,6 +58,7 @@ searchBtn.addEventListener('click', async () => {
         // B. Get Temperature
         let weatherRes = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`);
         let weatherData = await weatherRes.json();
+        
 
         // C. Get Air Quality
         let aqiRes = await fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${API_KEY}`);
@@ -83,7 +83,7 @@ function getHealthStatus(value, goodLimit, moderateLimit) {
 
 
 // --- 5. UI DISPLAY LOGIC ---
-function displayData(cityName, temp, weatherDesc, aqiLevel, pollutants) {
+function displayData(cityName, temp, weatherD, aqiLevel, pollutants) {
     // Generate text based on index
     const aqiText = ["", "Good", "Fair", "Moderate", "Poor", "Hazardous"][aqiLevel];
 
